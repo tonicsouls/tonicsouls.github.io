@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -20,11 +20,10 @@
     --g-border-dark: #b8b8b0;
     
     --g-red: #c70000;
+    --g-red-bg: #fdf2f2;
     --g-navy: #052962;
     --g-navy-light: #1d3e7b;
     --g-navy-bg: #f0f4fa;
-    --g-emerald: #187a41;
-    --g-emerald-bg: #edf7f0;
     
     --font-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -37,18 +36,18 @@
     font-family: var(--font-sans);
     background-color: #f4f4f1;
     color: var(--g-ink);
-    line-height: 1.6;
+    line-height: 1.55;
     font-size: 14px;
     -webkit-font-smoothing: antialiased;
     padding: 30px 15px;
   }
 
   .doc-container {
-    max-width: 1060px;
+    max-width: 1080px;
     margin: 0 auto;
     background: var(--g-paper);
     border: 1px solid var(--g-border);
-    padding: 44px 52px;
+    padding: 44px 50px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.04);
   }
 
@@ -60,6 +59,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    gap: 20px;
   }
 
   .masthead-left .brand-tag {
@@ -69,11 +69,12 @@
     letter-spacing: 0.12em;
     color: var(--g-navy-light);
     margin-bottom: 6px;
+    font-family: var(--font-mono);
   }
 
   .masthead-left h1 {
     font-family: var(--font-serif);
-    font-size: 29px;
+    font-size: 30px;
     font-weight: 700;
     color: var(--g-navy);
     line-height: 1.15;
@@ -91,8 +92,9 @@
     text-align: right;
     background: var(--g-surface);
     border: 1px solid var(--g-border);
-    border-left: 3px solid var(--g-navy);
+    border-left: 3.5px solid var(--g-navy);
     padding: 10px 16px;
+    flex-shrink: 0;
   }
 
   .calendar-badge .status {
@@ -116,7 +118,7 @@
     color: var(--g-muted);
   }
 
-  /* STATS ROW */
+  /* STATS ROW (4-COLUMN SUPERIOR LAYOUT) */
   .stat-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -127,25 +129,31 @@
   .stat-card {
     background: var(--g-surface);
     border: 1px solid var(--g-border);
-    border-top: 3px solid var(--g-navy);
-    padding: 14px 16px;
+    border-top: 3.5px solid var(--g-navy);
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
-  .stat-card.accent {
-    border-top: 3px solid var(--g-emerald);
+  /* 22 HIGHLIGHT SPOTLIGHT */
+  .stat-card.highlight {
+    border-top: 3.5px solid var(--g-red);
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(199, 0, 0, 0.06);
   }
 
   .stat-num {
-    font-family: var(--font-mono);
-    font-size: 20px;
+    font-family: var(--font-serif);
+    font-size: 32px;
     font-weight: 700;
+    line-height: 1.1;
     color: var(--g-navy);
     letter-spacing: -0.02em;
-    line-height: 1.2;
   }
 
-  .stat-card.accent .stat-num {
-    color: var(--g-emerald);
+  .stat-card.highlight .stat-num {
+    color: var(--g-red);
   }
 
   .stat-label {
@@ -154,7 +162,11 @@
     text-transform: uppercase;
     letter-spacing: 0.06em;
     color: var(--g-ink-light);
-    margin-top: 4px;
+    margin-top: 6px;
+  }
+
+  .stat-card.highlight .stat-label {
+    color: var(--g-red);
   }
 
   .stat-desc {
@@ -164,9 +176,19 @@
     line-height: 1.35;
   }
 
+  .attribution-tag {
+    font-size: 10px;
+    font-family: var(--font-mono);
+    color: var(--g-dim);
+    margin-top: 8px;
+    display: block;
+    border-top: 1px dashed var(--g-border);
+    padding-top: 4px;
+  }
+
   /* SECTION HEADERS */
   .section-header {
-    border-bottom: 1px solid var(--g-border);
+    border-bottom: 1px solid var(--g-border-dark);
     padding-bottom: 6px;
     margin-bottom: 12px;
     margin-top: 24px;
@@ -177,7 +199,7 @@
 
   .section-title {
     font-family: var(--font-serif);
-    font-size: 18px;
+    font-size: 18.5px;
     font-weight: 700;
     color: var(--g-navy);
     letter-spacing: -0.01em;
@@ -200,7 +222,7 @@
   table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 13px;
+    font-size: 13.5px;
     background: var(--g-paper);
   }
 
@@ -209,7 +231,7 @@
     color: var(--g-navy);
     font-weight: 700;
     text-align: left;
-    padding: 8px 12px;
+    padding: 9px 13px;
     border-top: 1px solid var(--g-border);
     border-bottom: 1px solid var(--g-border-dark);
     font-size: 11px;
@@ -218,7 +240,7 @@
   }
 
   td {
-    padding: 10px 12px;
+    padding: 11px 13px;
     border-bottom: 1px solid var(--g-border);
     vertical-align: top;
     line-height: 1.5;
@@ -234,12 +256,10 @@
     font-weight: 600;
   }
 
-  .attribution-tag {
-    font-size: 10.5px;
-    font-family: var(--font-mono);
-    color: var(--g-dim);
-    margin-top: 3px;
-    display: block;
+  td .attribution-tag {
+    border-top: none;
+    padding-top: 2px;
+    margin-top: 4px;
   }
 
   /* SUBSIDIARIES GRID */
@@ -254,7 +274,7 @@
     border: 1px solid var(--g-border);
     background: var(--g-surface);
     padding: 14px 16px;
-    border-left: 3px solid var(--g-navy-light);
+    border-left: 3.5px solid var(--g-navy-light);
   }
 
   .sub-box h4 {
@@ -272,7 +292,7 @@
   }
 
   .sub-box p {
-    font-size: 12px;
+    font-size: 12.5px;
     color: var(--g-ink-light);
     line-height: 1.45;
   }
@@ -302,7 +322,7 @@
 
   .exec-name {
     font-family: var(--font-serif);
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 700;
     color: var(--g-navy);
   }
@@ -323,6 +343,10 @@
     line-height: 1.5;
   }
 
+  .exec-body p:last-child {
+    margin-bottom: 0;
+  }
+
   .exec-body p strong {
     color: var(--g-ink);
     font-weight: 600;
@@ -330,8 +354,9 @@
 
   /* FOOTER */
   .doc-footer {
-    border-top: 1px solid var(--g-border);
-    padding-top: 12px;
+    border-top: 1px solid var(--g-border-dark);
+    padding-top: 14px;
+    margin-top: 24px;
     display: flex;
     justify-content: space-between;
     font-size: 11px;
@@ -359,7 +384,14 @@
     background: var(--g-navy-light);
   }
 
-  @media (max-width: 768px) {
+  /* PAGE BREAK CLASS FOR CLEAN 2-PAGE SPREAD */
+  .page-break {
+    page-break-before: always;
+    break-before: page;
+  }
+
+  /* SCREEN MEDIA QUERY ONLY - NEVER TRIGGER IN PRINT */
+  @media screen and (max-width: 768px) {
     body {
       padding: 12px 8px;
       font-size: 13.5px;
@@ -375,7 +407,7 @@
       gap: 14px;
     }
     .masthead-left h1 {
-      font-size: 23px;
+      font-size: 24px;
     }
     .calendar-badge {
       text-align: left;
@@ -407,19 +439,99 @@
     }
   }
 
+  /* PRINT MEDIA: LARGE PRINT / LEGAL & LETTER EXECUTIVE FORMAT */
+  @page {
+    size: legal portrait;
+    margin: 0.35in 0.45in;
+  }
+
   @media print {
     body {
-      background: #ffffff;
-      padding: 0;
+      background: #ffffff !important;
+      padding: 0 !important;
+      font-size: 13.5px !important;
     }
     .doc-container {
-      box-shadow: none;
-      border: none;
-      padding: 0;
-      max-width: 100%;
+      box-shadow: none !important;
+      border: none !important;
+      padding: 0 !important;
+      max-width: 100% !important;
     }
     .print-btn-bar {
-      display: none;
+      display: none !important;
+    }
+    .masthead {
+      display: flex !important;
+      flex-direction: row !important;
+      justify-content: space-between !important;
+      align-items: flex-end !important;
+      margin-bottom: 16px !important;
+      padding-bottom: 14px !important;
+    }
+    .calendar-badge {
+      text-align: right !important;
+      width: auto !important;
+      padding: 8px 14px !important;
+    }
+    .stat-grid {
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      gap: 14px !important;
+      margin-bottom: 16px !important;
+    }
+    .stat-card {
+      padding: 12px 14px !important;
+    }
+    .stat-num {
+      font-size: 30px !important;
+    }
+    .section-header {
+      margin-top: 14px !important;
+      margin-bottom: 8px !important;
+      padding-bottom: 4px !important;
+    }
+    .table-wrap {
+      margin-bottom: 16px !important;
+    }
+    table {
+      font-size: 13px !important;
+    }
+    th {
+      padding: 7px 11px !important;
+      font-size: 10.5px !important;
+    }
+    td {
+      padding: 8px 11px !important;
+    }
+    .subs-grid {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 12px !important;
+      margin-bottom: 0 !important;
+    }
+    .sub-box {
+      padding: 10px 13px !important;
+    }
+    .sub-box p {
+      font-size: 11.5px !important;
+      line-height: 1.35 !important;
+    }
+    .exec-grid {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 16px !important;
+      margin-bottom: 16px !important;
+    }
+    .exec-box {
+      padding: 14px 16px !important;
+    }
+    .exec-body p {
+      font-size: 12px !important;
+      line-height: 1.45 !important;
+    }
+    .page-break {
+      page-break-before: always !important;
+      break-before: page !important;
     }
   }
 </style>
@@ -446,30 +558,37 @@
     </div>
   </div>
 
-  <!-- STATS TILES (95%+ CONFIDENCE BAR) -->
+  <!-- STATS TILES (SUPERIOR 4-COLUMN HORIZONTAL GRID) -->
   <div class="stat-grid">
+    <!-- Card 1 -->
     <div class="stat-card">
       <div class="stat-num">$1.1B+</div>
       <div class="stat-label">PE Sponsor AUM</div>
       <div class="stat-desc">Silver Oak Services Partners (Fund IV)</div>
       <span class="attribution-tag">Source: Silver Oak Disclosures</span>
     </div>
+
+    <!-- Card 2 -->
     <div class="stat-card">
       <div class="stat-num">10,000+</div>
       <div class="stat-label">Hosted Businesses</div>
       <div class="stat-desc">Managed application & cloud clients</div>
       <span class="attribution-tag">Source: SummitHQ.com</span>
     </div>
-    <div class="stat-card">
-      <div class="stat-num">22 Facilities</div>
+
+    <!-- Card 3: HIGHLIGHTED / SPOTLIGHT -->
+    <div class="stat-card highlight">
+      <div class="stat-num">22</div>
       <div class="stat-label">Global Data Centers</div>
-      <div class="stat-desc">North American & international nodes</div>
+      <div class="stat-desc">North American & International Nodes</div>
       <span class="attribution-tag">Source: SummitHQ.com</span>
     </div>
-    <div class="stat-card accent">
-      <div class="stat-num">Active ROI Tool</div>
+
+    <!-- Card 4: ACTIVE ROI TOOL (NO CHEESY GREEN) -->
+    <div class="stat-card">
+      <div class="stat-num">Active Tool</div>
       <div class="stat-label">Hypervisor TCO Tooling</div>
-      <div class="stat-desc">VMware vs. Hyper-V cost calculator</div>
+      <div class="stat-desc">Public VMware vs. Hyper-V Calculator</div>
       <span class="attribution-tag">Source: SummitHQ.com Tools</span>
     </div>
   </div>
@@ -541,9 +660,12 @@
     </div>
   </div>
 
+  <!-- CLEAN PAGE BREAK FOR SPREAD -->
+  <div class="page-break"></div>
+
   <!-- SECTION 3: INFRASTRUCTURE & HYPERVISOR STANCE -->
   <div class="table-wrap">
-    <div class="section-header">
+    <div class="section-header" style="margin-top: 10px;">
       <div class="section-title">3. Verified Technology Stack & Hypervisor Stance</div>
       <div class="section-tag">Technical Environment</div>
     </div>
@@ -622,4 +744,3 @@
 
 </body>
 </html>
-
