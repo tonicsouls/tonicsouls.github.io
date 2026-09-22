@@ -1,0 +1,625 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive Briefing: Summit Hosting, LLC (dba Summit)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --g-ink: #121212;
+    --g-ink-light: #2d3138;
+    --g-muted: #595f6b;
+    --g-dim: #767d8a;
+    --g-paper: #ffffff;
+    --g-surface: #f7f7f5;
+    --g-surface-card: #ffffff;
+    --g-border: #dcdcd6;
+    --g-border-dark: #b8b8b0;
+    
+    --g-red: #c70000;
+    --g-navy: #052962;
+    --g-navy-light: #1d3e7b;
+    --g-navy-bg: #f0f4fa;
+    --g-emerald: #187a41;
+    --g-emerald-bg: #edf7f0;
+    
+    --font-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', Consolas, Monaco, monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    font-family: var(--font-sans);
+    background-color: #f4f4f1;
+    color: var(--g-ink);
+    line-height: 1.6;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    padding: 30px 15px;
+  }
+
+  .doc-container {
+    max-width: 1060px;
+    margin: 0 auto;
+    background: var(--g-paper);
+    border: 1px solid var(--g-border);
+    padding: 44px 52px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+  }
+
+  /* MASTHEAD */
+  .masthead {
+    border-bottom: 2px solid var(--g-navy);
+    padding-bottom: 18px;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .masthead-left .brand-tag {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--g-navy-light);
+    margin-bottom: 6px;
+  }
+
+  .masthead-left h1 {
+    font-family: var(--font-serif);
+    font-size: 29px;
+    font-weight: 700;
+    color: var(--g-navy);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  .masthead-left .event-sub {
+    font-size: 13px;
+    color: var(--g-muted);
+    margin-top: 5px;
+    font-weight: 500;
+  }
+
+  .calendar-badge {
+    text-align: right;
+    background: var(--g-surface);
+    border: 1px solid var(--g-border);
+    border-left: 3px solid var(--g-navy);
+    padding: 10px 16px;
+  }
+
+  .calendar-badge .status {
+    font-size: 10.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--g-navy);
+    font-family: var(--font-mono);
+  }
+
+  .calendar-badge .datetime {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--g-ink);
+    margin-top: 2px;
+  }
+
+  .calendar-badge .location {
+    font-size: 11.5px;
+    color: var(--g-muted);
+  }
+
+  /* STATS ROW */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+
+  .stat-card {
+    background: var(--g-surface);
+    border: 1px solid var(--g-border);
+    border-top: 3px solid var(--g-navy);
+    padding: 14px 16px;
+  }
+
+  .stat-card.accent {
+    border-top: 3px solid var(--g-emerald);
+  }
+
+  .stat-num {
+    font-family: var(--font-mono);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--g-navy);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  .stat-card.accent .stat-num {
+    color: var(--g-emerald);
+  }
+
+  .stat-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--g-ink-light);
+    margin-top: 4px;
+  }
+
+  .stat-desc {
+    font-size: 11.5px;
+    color: var(--g-muted);
+    margin-top: 3px;
+    line-height: 1.35;
+  }
+
+  /* SECTION HEADERS */
+  .section-header {
+    border-bottom: 1px solid var(--g-border);
+    padding-bottom: 6px;
+    margin-bottom: 12px;
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .section-title {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--g-navy);
+    letter-spacing: -0.01em;
+  }
+
+  .section-tag {
+    font-size: 10.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--g-muted);
+    font-family: var(--font-mono);
+  }
+
+  /* EDITORIAL TABLE */
+  .table-wrap {
+    margin-bottom: 24px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    background: var(--g-paper);
+  }
+
+  th {
+    background: var(--g-surface);
+    color: var(--g-navy);
+    font-weight: 700;
+    text-align: left;
+    padding: 8px 12px;
+    border-top: 1px solid var(--g-border);
+    border-bottom: 1px solid var(--g-border-dark);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--g-border);
+    vertical-align: top;
+    line-height: 1.5;
+    color: var(--g-ink-light);
+  }
+
+  tr:last-child td {
+    border-bottom: 1px solid var(--g-border-dark);
+  }
+
+  td strong {
+    color: var(--g-ink);
+    font-weight: 600;
+  }
+
+  .attribution-tag {
+    font-size: 10.5px;
+    font-family: var(--font-mono);
+    color: var(--g-dim);
+    margin-top: 3px;
+    display: block;
+  }
+
+  /* SUBSIDIARIES GRID */
+  .subs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+
+  .sub-box {
+    border: 1px solid var(--g-border);
+    background: var(--g-surface);
+    padding: 14px 16px;
+    border-left: 3px solid var(--g-navy-light);
+  }
+
+  .sub-box h4 {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--g-navy);
+    margin-bottom: 4px;
+  }
+
+  .sub-box .sub-meta {
+    font-size: 11px;
+    color: var(--g-muted);
+    font-family: var(--font-mono);
+    margin-bottom: 8px;
+  }
+
+  .sub-box p {
+    font-size: 12px;
+    color: var(--g-ink-light);
+    line-height: 1.45;
+  }
+
+  /* EXECUTIVE PROFILES */
+  .exec-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 24px;
+  }
+
+  .exec-box {
+    border: 1px solid var(--g-border);
+    background: var(--g-surface);
+    padding: 18px 20px;
+  }
+
+  .exec-header {
+    border-bottom: 1px solid var(--g-border);
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .exec-name {
+    font-family: var(--font-serif);
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--g-navy);
+  }
+
+  .exec-role-tag {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--g-navy-light);
+    font-family: var(--font-mono);
+  }
+
+  .exec-body p {
+    font-size: 12.5px;
+    color: var(--g-ink-light);
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+
+  .exec-body p strong {
+    color: var(--g-ink);
+    font-weight: 600;
+  }
+
+  /* FOOTER */
+  .doc-footer {
+    border-top: 1px solid var(--g-border);
+    padding-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--g-dim);
+    font-family: var(--font-mono);
+  }
+
+  .print-btn-bar {
+    text-align: right;
+    margin-bottom: 12px;
+  }
+
+  .print-btn {
+    background: var(--g-navy);
+    color: #fff;
+    border: none;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .print-btn:hover {
+    background: var(--g-navy-light);
+  }
+
+  @media (max-width: 768px) {
+    body {
+      padding: 12px 8px;
+      font-size: 13.5px;
+    }
+    .doc-container {
+      padding: 22px 18px;
+      border: none;
+      box-shadow: none;
+    }
+    .masthead {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .masthead-left h1 {
+      font-size: 23px;
+    }
+    .calendar-badge {
+      text-align: left;
+      width: 100%;
+    }
+    .stat-grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .subs-grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .exec-grid {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    .table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-bottom: 20px;
+    }
+    table {
+      min-width: 540px;
+    }
+    .doc-footer {
+      flex-direction: column;
+      gap: 6px;
+    }
+  }
+
+  @media print {
+    body {
+      background: #ffffff;
+      padding: 0;
+    }
+    .doc-container {
+      box-shadow: none;
+      border: none;
+      padding: 0;
+      max-width: 100%;
+    }
+    .print-btn-bar {
+      display: none;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="doc-container">
+
+  <div class="print-btn-bar">
+    <button class="print-btn" onclick="window.print()">Print Dossier (PDF)</button>
+  </div>
+
+  <!-- MASTHEAD -->
+  <div class="masthead">
+    <div class="masthead-left">
+      <div class="brand-tag">Executive Intelligence Dossier</div>
+      <h1>Summit Hosting, LLC (dba Summit)</h1>
+      <div class="event-sub">infra//STRUCTURE Summit 2026 &bull; Las Vegas, NV &bull; summithq.com</div>
+    </div>
+    <div class="calendar-badge">
+      <div class="status">Confirmed Executive Briefing</div>
+      <div class="datetime">Wed, Oct 7, 2026 &bull; 12:30 PM CT</div>
+      <div class="location">Acronis Meeting Table (Show Floor)</div>
+    </div>
+  </div>
+
+  <!-- STATS TILES (95%+ CONFIDENCE BAR) -->
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-num">$1.1B+</div>
+      <div class="stat-label">PE Sponsor AUM</div>
+      <div class="stat-desc">Silver Oak Services Partners (Fund IV)</div>
+      <span class="attribution-tag">Source: Silver Oak Disclosures</span>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">10,000+</div>
+      <div class="stat-label">Hosted Businesses</div>
+      <div class="stat-desc">Managed application & cloud clients</div>
+      <span class="attribution-tag">Source: SummitHQ.com</span>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">22 Facilities</div>
+      <div class="stat-label">Global Data Centers</div>
+      <div class="stat-desc">North American & international nodes</div>
+      <span class="attribution-tag">Source: SummitHQ.com</span>
+    </div>
+    <div class="stat-card accent">
+      <div class="stat-num">Active ROI Tool</div>
+      <div class="stat-label">Hypervisor TCO Tooling</div>
+      <div class="stat-desc">VMware vs. Hyper-V cost calculator</div>
+      <span class="attribution-tag">Source: SummitHQ.com Tools</span>
+    </div>
+  </div>
+
+  <!-- SECTION 1: CORPORATE & PE PROFILE -->
+  <div class="table-wrap">
+    <div class="section-header">
+      <div class="section-title">1. Corporate Profile, Operating Footprint & Attribution</div>
+      <div class="section-tag">Corporate Baseline</div>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 20%;">Dimension</th>
+          <th style="width: 44%;">Verified Intelligence & Provenance</th>
+          <th style="width: 36%;">Operational & Executive Relevance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Entity & History</strong></td>
+          <td><strong>Summit Hosting, LLC</strong> (Alpharetta, GA). Founded in 2004 (20+ years in operation). 100% Contractual Uptime SLA across infrastructure environments.
+          <span class="attribution-tag">Source: SummitHQ.com</span></td>
+          <td>Mature, mission-critical infrastructure provider evolved from accounting/ERP application hosting into an enterprise bare-metal and hybrid cloud powerhouse.</td>
+        </tr>
+        <tr>
+          <td><strong>Ownership & Governance</strong></td>
+          <td>Majority-owned by <strong>Silver Oak Services Partners</strong> (Evanston, IL; $1.1B+ AUM; Fund IV). Recapitalized October 2021 with financing from Harbert Credit Solutions.
+          <span class="attribution-tag">Source: Silver Oak Services Partners & Harbert Disclosures</span></td>
+          <td>Institutional private equity stewardship focused on recurring revenue stability, EBITDA margin optimization, and platform consolidation across acquired entities.</td>
+        </tr>
+        <tr>
+          <td><strong>Workforce & Scope</strong></td>
+          <td>Approximately <strong>200 employees</strong> across the United States and Canada. Dedicated data center operations, network engineering, and client support teams.
+          <span class="attribution-tag">Source: Apollo.io Enterprise Profile</span></td>
+          <td>Compact, highly technical engineering organization managing thousands of production customer tenants across 22 global facility footprints.</td>
+        </tr>
+        <tr>
+          <td><strong>Enterprise Client Footprint</strong></td>
+          <td>Notable client references include <strong>37signals</strong> (featured Dell hardware / cloud exit case study), <strong>Shopify</strong>, <strong>CAT</strong>, <strong>SAP</strong>, <strong>Ulta</strong>, <strong>BCBS</strong>, <strong>Bandai Namco</strong>, <strong>IKEA</strong>, <strong>Cond&eacute; Nast</strong>, and <strong>Twilio</strong>.
+          <span class="attribution-tag">Source: SummitHQ.com & Published Case Studies</span></td>
+          <td>Demonstrated track record supporting demanding SaaS leaders, Fortune 500 enterprises, and large-scale web architectures requiring strict performance and uptime SLAs.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION 2: CORPORATE STRUCTURE (3 OPERATING SUBSIDIARIES) -->
+  <div class="section-header">
+    <div class="section-title">2. Corporate Structure: Three Operating Subsidiaries</div>
+    <div class="section-tag">Platform Architecture</div>
+  </div>
+
+  <div class="subs-grid">
+    <div class="sub-box">
+      <h4>Deft (ServerCentral Turing Group)</h4>
+      <div class="sub-meta">Acquired Feb 28, 2024 &bull; Chicago, IL</div>
+      <p>Bare-metal cloud, enterprise colocation, and high-throughput IP transit. Anchored by major Chicago carrier hotels (350 E Cermak & 600 S Federal). Founded in 2000 by Jordan Lowe.</p>
+    </div>
+    <div class="sub-box">
+      <h4>HorizonIQ</h4>
+      <div class="sub-meta">Strategic Acquisition &bull; National Footprint</div>
+      <p>Specialized managed hosting, multi-tenant cloud environments, and proactive managed services catering to growth-stage businesses and regional service providers.</p>
+    </div>
+    <div class="sub-box">
+      <h4>Handy Networks</h4>
+      <div class="sub-meta">Strategic Acquisition &bull; Denver, CO</div>
+      <p>Denver-based colocation, dedicated server infrastructure, and disaster recovery hosting with specialized high-availability power and facility redundancies.</p>
+    </div>
+  </div>
+
+  <!-- SECTION 3: INFRASTRUCTURE & HYPERVISOR STANCE -->
+  <div class="table-wrap">
+    <div class="section-header">
+      <div class="section-title">3. Verified Technology Stack & Hypervisor Stance</div>
+      <div class="section-tag">Technical Environment</div>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 24%;">Stack Dimension</th>
+          <th style="width: 40%;">Verified Technical Detection</th>
+          <th style="width: 36%;">Strategic Observation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Virtualization & Hypervisor</strong></td>
+          <td><strong>VMware (vCenter, vSphere)</strong> and <strong>Microsoft Hyper-V Server</strong> detected in active deployment.
+          <span class="attribution-tag">Source: Apollo.io Stack Detection</span></td>
+          <td>Dual-hypervisor operational competency across production environments, managing both enterprise VMware clusters and Windows/Hyper-V workloads.</td>
+        </tr>
+        <tr>
+          <td><strong>Hypervisor Consulting Position</strong></td>
+          <td>Summit actively provides a public <strong>"VMware vs. Hyper-V Licensing ROI Calculator"</strong> on summithq.com to assist clients in evaluating licensing alternatives.
+          <span class="attribution-tag">Source: SummitHQ.com Diagnostic Tooling</span></td>
+          <td>Summit explicitly recognizes hypervisor cost sensitivity among client bases and actively engages in consultative total-cost-of-ownership (TCO) displacements.</td>
+        </tr>
+        <tr>
+          <td><strong>Data Protection & Security</strong></td>
+          <td><strong>Veeam</strong>, <strong>Zerto</strong>, <strong>Rubrik</strong>, <strong>Fortinet FortiGate</strong>, and <strong>LogicMonitor</strong> / <strong>Grafana</strong> monitoring telemetry.
+          <span class="attribution-tag">Source: Apollo.io Stack Detection & Job Postings</span></td>
+          <td>Broad backup and recovery ecosystem alignment. Strong affinity for Veeam-powered data resilience and robust edge firewall isolation.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION 4: EXECUTIVE PROFILES -->
+  <div class="section-header">
+    <div class="section-title">4. Executive Profiles & Show-Floor Alignment (Las Vegas)</div>
+    <div class="section-tag">Leadership Analysis</div>
+  </div>
+
+  <div class="exec-grid">
+    <!-- Andre Wu -->
+    <div class="exec-box">
+      <div class="exec-header">
+        <div class="exec-name">Andre Wu</div>
+        <div class="exec-role-tag">Chief Executive Officer</div>
+      </div>
+      <div class="exec-body">
+        <p><strong>Executive Background:</strong> Appointed CEO in January 2025 by Silver Oak Services Partners. Formerly Senior Vice President at ACCSCIENT and Vice President at RoundTower Technologies (premier national solution provider acquired by AHEAD in 2020).</p>
+        <p><strong>Executive Perspective:</strong> Highly disciplined, private-equity aligned operational leader focused on portfolio integration, gross margin preservation, and scalable infrastructure efficiency across Summit's consolidated entities.</p>
+        <p><strong>Meeting Focus:</strong> Peer-level discussion regarding multi-tenant infrastructure economics, hypervisor cost containment strategies, and software-defined efficiency.</p>
+      </div>
+    </div>
+
+    <!-- Jordan Lowe -->
+    <div class="exec-box">
+      <div class="exec-header">
+        <div class="exec-name">Jordan Lowe</div>
+        <div class="exec-role-tag">Chief Strategy Officer</div>
+      </div>
+      <div class="exec-body">
+        <p><strong>Executive Background:</strong> Co-founder of ServerCentral (founded 2000 in Chicago). Over 24 years, scaled ServerCentral into Deft before its strategic acquisition by Summit in February 2024.</p>
+        <p><strong>Technical Breadth:</strong> Bare-metal architect, Linux kernel orchestration pioneer, and network transit veteran. Deep mastery of hypervisor scheduling, IOPS throughput, and large-scale data center interconnectivity.</p>
+        <p><strong>Meeting Focus:</strong> Architectural exploration of bare-metal virtualization, low-overhead container/VM density, and scalable storage orchestration.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="doc-footer">
+    <div>Virtuozzo Commercial Operations &bull; AMER Region</div>
+    <div>Confidential &bull; infra//STRUCTURE 2026 Executive Intelligence Dossier</div>
+  </div>
+
+</div>
+
+</body>
+</html>
+
